@@ -237,10 +237,20 @@ function encodeToRot13(str) {
   const al = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
   const dec = 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm';
   // throw new Error('Not implemented');
-  return str
-    .split('')
-    .map((element) => dec.split('')[al.indexOf(element)])
-    .join('');
+  // return str
+  //   .split('')
+  //   .map((element) => dec.split('')[al.indexOf(element)])
+  //   .join(' ');
+  return str.split(' ').length === 1
+    ? str
+        .split('')
+        .map((element) => dec.split('')[al.indexOf(element)])
+        .join(' ')
+    :
+    // str
+    //     .split(' ')
+    //     .map((element) => dec.split('')[al.indexOf(element)])
+    //     .join(' ');
 }
 
 /**
