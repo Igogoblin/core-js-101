@@ -53,7 +53,7 @@ function getCircleCircumference(radius) {
  */
 function getAverage(value1, value2) {
   // throw new Error('Not implemented');
-  return (value1 + value2) / 2;
+  return value1 / 2 + value2 / 2;
 }
 
 /**
@@ -241,10 +241,9 @@ function isPrime(n) {
 function toNumber(value, def) {
   // throw new Error('Not implemented');
   // return typeof value === 'number' ? value : def;
-  if (typeof value === 'number' || value instanceof Number) {
-    return Number(value);
-  }
-  return def;
+  const num = Number(value);
+  // isFinite для проверки на бесконечность
+  return Number.isFinite(num) ? num : def;
 }
 
 module.exports = {
