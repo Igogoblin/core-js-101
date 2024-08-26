@@ -213,7 +213,7 @@ function getRectangleString(width, height) {
   // throw new Error('Not implemented');
   const mid = `│${' '.repeat(width - 2)}│\n`;
   return `┌${'─'.repeat(width - 2)}┐\n${mid.repeat(height - 2)}└${'─'.repeat(
-    width - 2
+    width - 2,
   )}┘\n`;
 }
 
@@ -243,14 +243,20 @@ function encodeToRot13(str) {
   //   .join(' ');
   return str.split(' ').length === 1
     ? str
+      .split('')
+      .map((element) => dec.split('')[al.indexOf(element)])
+      .join('')
+    : str
+      .split(' ')
+      .map((element) => element
         .split('')
-        .map((element) => dec.split('')[al.indexOf(element)])
-        .join(' ')
-    :
-    // str
-    //     .split(' ')
-    //     .map((element) => dec.split('')[al.indexOf(element)])
-    //     .join(' ');
+        .map((el) => (dec.split('')[al.indexOf(el)] ? dec.split('')[al.indexOf(el)] : el))
+        .join(''))
+      .join(' ');
+  // str
+  //     .split(' ')
+  //     .map((element) => dec.split('')[al.indexOf(element)])
+  //     .join(' ');
 }
 
 /**
