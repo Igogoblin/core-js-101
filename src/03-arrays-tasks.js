@@ -35,13 +35,14 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  // throw new Error('Not implemented');
   // const result = [];
   // for (let i = 1; i < len * 2 + 1; i += 2) {
   //   result.push(i);
   // }
   // return result;
+  return Array.from({ length: len }, (_, i) => i * 2 + 1);
 }
 
 /**
@@ -156,8 +157,7 @@ function getStringsLength(arr) {
  */
 function insertItem(arr, item, index) {
   // throw new Error('Not implemented');
-  arr.splice(index, 0, item);
-  return arr;
+  return arr.splice(index, 0, item);
 }
 
 /**
