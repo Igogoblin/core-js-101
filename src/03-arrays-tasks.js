@@ -614,12 +614,12 @@ function swapHeadAndTail(arr) {
   return arr.length === 1
     ? arr
     : arr
-        .slice(-Math.floor(arr.length / 2))
-        .concat(
-          arr
-            .slice(arr.length / 2, Math.ceil(arr.length / 2))
-            .concat(arr.slice(0, arr.length / 2))
-        );
+      .slice(-Math.floor(arr.length / 2))
+      .concat(
+        arr
+          .slice(arr.length / 2, Math.ceil(arr.length / 2))
+          .concat(arr.slice(0, arr.length / 2)),
+      );
 }
 
 module.exports = {
