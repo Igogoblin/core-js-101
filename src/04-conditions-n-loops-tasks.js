@@ -61,7 +61,7 @@ function getFactorial(n) {
 function getSumBetweenNumbers(n1, n2) {
   // throw new Error('Not implemented');
   return Array.from({ length: n2 - n1 + 1 }, (_, i) => n1 + i).reduce(
-    (acc, current) => acc + current
+    (acc, current) => acc + current,
   );
 }
 
@@ -188,8 +188,11 @@ function findFirstSingleChar(/* str */) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  throw new Error('Not implemented');
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  // throw new Error('Not implemented');
+  return `${isStartIncluded ? '[' : '('}${a > b ? b : a}, ${b > a ? b : a}${
+    isEndIncluded ? ']' : ')'
+  }`;
 }
 
 /**
