@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 /* ********************************************************************************************
  *                                                                                            *
  * Please read the following tutorial before implementing tasks:                               *
@@ -349,19 +350,26 @@ function getPositivesCount(arr) {
  */
 function sortDigitNamesByNumericOrder(/* arr */) {
   // 'nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two', 'one', 'zero'
-  // const check = [
-  //   { 0: 'zero' },
-  //   { 1: 'one' },
-  //   { 2: 'two' },
-  //   { 3: 'three' },
-  //   { 4: 'four' },
-  //   { 5: 'five' },
-  //   { 6: 'six' },
-  //   { 7: 'seven' },
-  //   { 8: 'eight' },
-  //   { 9: 'nine' },
-  // ];
+  // const check = {
+  //   0: 'zero',
+  //   1: 'one',
+  //   2: 'two',
+  //   3: 'three',
+  //   4: 'four',
+  //   5: 'five',
+  //   6: 'six',
+  //   7: 'seven',
+  //   8: 'eight',
+  //   9: 'nine',
+  // };
   throw new Error('Not implemented');
+  // return arr.sort((a, b) => check[a] - check[b]);
+  // eslint-disable-next-line consistent-return
+  // return arr.sort((a, b) => {
+  //   if (check[a] > check[b]) return 1;
+  //   if (check[a] < check[b]) return -1;
+  //   return 0;
+  // });
   // return arr.sort((a, b) => {
   //   if (a === 'zero') return -1;
   //   if (b === 'zero') return 1;
@@ -567,8 +575,14 @@ function distinct(arr) {
  *    "Poland" => ["Lodz"]
  *   }
  */
-function group(/* array, keySelector, valueSelector */) {
-  throw new Error('Not implemented');
+function group(array, keySelector, valueSelector) {
+  // throw new Error('Not implemented');
+  return array.reduce((acc, item) => {
+    const key = keySelector(item);
+    const val = valueSelector(item);
+    acc.set(key, [...(acc.get(key) || []), val]);
+    return acc;
+  }, new Map());
 }
 
 /**

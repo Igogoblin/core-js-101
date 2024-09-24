@@ -1,3 +1,6 @@
+/* eslint-disable no-unreachable */
+/* eslint-disable no-shadow */
+/* eslint-disable operator-linebreak */
 /* *************************************************************************************************
  *                                                                                                *
  * Please read the following tutorial before implementing tasks:                                   *
@@ -26,8 +29,25 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(/* num */) {
-  throw new Error('Not implemented');
+function getFizzBuzz(num) {
+  // throw new Error('Not implemented');
+  //   return num % 3 === 0 && num % 5 === 0
+  //     ? 'FizzBuzz'
+  //     : num % 3 === 0
+  //       ? 'Fizz'
+  //       : num % 5 === 0
+  //         ? 'Buzz'
+  //         : num;
+  if (num % 3 === 0 && num % 5 === 0) {
+    return 'FizzBuzz';
+  }
+  if (num % 3 === 0) {
+    return 'Fizz';
+  }
+  if (num % 5 === 0) {
+    return 'Buzz';
+  }
+  return num;
 }
 
 /**
@@ -61,7 +81,8 @@ function getFactorial(n) {
 function getSumBetweenNumbers(n1, n2) {
   // throw new Error('Not implemented');
   return Array.from({ length: n2 - n1 + 1 }, (_, i) => n1 + i).reduce(
-    (acc, current) => acc + current,
+    // eslint-disable-next-line comma-dangle
+    (acc, current) => acc + current
   );
 }
 
@@ -119,6 +140,12 @@ function isTriangle(a, b, c) {
  */
 function doRectanglesOverlap(/* rect1, rect2 */) {
   throw new Error('Not implemented');
+  // return !(
+  //   rect1.left > rect2.right ||
+  //   rect1.right < rect2.left ||
+  //   rect1.top > rect2.bottom ||
+  //   rect1.bottom < rect2.top
+  // );
 }
 
 /**
@@ -147,8 +174,13 @@ function doRectanglesOverlap(/* rect1, rect2 */) {
  *   { center: { x:0, y:0 }, radius:10 },  { x:10, y:10 }   => false
  *
  */
-function isInsideCircle(/* circle, point */) {
-  throw new Error('Not implemented');
+function isInsideCircle(circle, point) {
+  // throw new Error('Not implemented');
+  return (
+    // eslint-disable-next-line operator-linebreak
+    (point.x - circle.center.x) ** 2 + (point.y - circle.center.y) ** 2 <
+    circle.radius ** 2
+  );
 }
 
 /**
@@ -267,8 +299,21 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
-  throw new Error('Not implemented');
+function getDigitalRoot(num) {
+  // throw new Error('Not implemented');
+  let sum = 0;
+  while (num > 0) {
+    sum += num % 10;
+    // eslint-disable-next-line no-param-reassign
+    num = Math.floor(num / 10);
+  }
+
+  if (sum > 9) {
+    return getDigitalRoot(sum);
+  }
+
+  return sum;
+  // return num;
 }
 
 /**
@@ -294,6 +339,7 @@ function getDigitalRoot(/* num */) {
  */
 function isBracketsBalanced(/* str */) {
   throw new Error('Not implemented');
+  // return str.match(/\(\)|\[|\]|\{|\}/g).length % 2 === 0;
 }
 
 /**
@@ -334,6 +380,13 @@ function toNaryString(/* num, n */) {
  */
 function getCommonDirectoryPath(/* pathes */) {
   throw new Error('Not implemented');
+  // let path = '';
+  // for (let i = 0; i < pathes.length; i += 1) {
+  //   if (pathes[i].indexOf(path) === 0) {
+  //     path = pathes[i];
+  //   }
+  // }
+  // return path;
 }
 
 /**
@@ -356,6 +409,17 @@ function getCommonDirectoryPath(/* pathes */) {
  */
 function getMatrixProduct(/* m1, m2 */) {
   throw new Error('Not implemented');
+  // const result = [];
+  // for (let i = 0; i < m1.length; i += 1) {
+  //   result[i] = [];
+  //   for (let j = 0; j < m1[i].length; j += 1) {
+  //     result[i][j] = 0;
+  //     for (let k = 0; k < m1.length; k += 1) {
+  //       result[i][j] += m1[i][k] * m2[k][j];
+  //     }
+  //   }
+  // }
+  // return result;
 }
 
 /**
@@ -390,6 +454,17 @@ function getMatrixProduct(/* m1, m2 */) {
  */
 function evaluateTicTacToePosition(/* position */) {
   throw new Error('Not implemented');
+  // const x = position.filter((x) => x === 'X').length;
+  // const o = position.filter((x) => x === 'O').length;
+  // if (x === o) {
+  //   return undefined;
+  // }
+  // if (x > o) {
+  //   return 'X';
+  // }
+  // return '0';
+
+  // return undefined;
 }
 
 module.exports = {
