@@ -509,6 +509,21 @@ function getMatrixProduct(m1, m2) {
  */
 function evaluateTicTacToePosition(/* position */) {
   throw new Error('Not implemented');
+  // if (position.filter((x) => x === 'X').length === 3) {
+  //   return 'X';
+  // }
+  // if (position.filter((x) => x === 'O').length === 3) {
+  //   return 'O';
+  // }
+  // return undefined;
+
+  // if (position.filter((x) => x === 'X').length === 0) {
+  //   return '0';
+  // }
+  // if (position.filter((x) => x === 'O').length === 0) {
+  //   return 'X';
+  // }
+  // return undefined;
   // const x = position.filter((x) => x === 'X').length;
   // const o = position.filter((x) => x === 'O').length;
   // if (x === o) {
