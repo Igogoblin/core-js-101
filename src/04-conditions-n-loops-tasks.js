@@ -194,8 +194,11 @@ function isInsideCircle(circle, point) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  // throw new Error('Not implemented');
+  return str
+    .split('')
+    .find((char) => str.indexOf(char) === str.lastIndexOf(char));
 }
 
 /**
@@ -283,6 +286,16 @@ function reverseInteger(num) {
  */
 function isCreditCardNumber(/* ccn */) {
   throw new Error('Not implemented');
+  // let sum = 0;
+  // const digits = ccn.toString().split('').reverse();
+  // for (let i = 0; i < digits.length; i += 1) {
+  //   if (i % 2 === 1) {
+  //     // eslint-disable-next-line operator-assignment
+  //     digits[i] = digits[i] * 2;
+  //   }
+  //   sum += digits[i];
+  // }
+  // return sum % 10 === 0;
 }
 
 /**
@@ -339,6 +352,7 @@ function getDigitalRoot(num) {
  */
 function isBracketsBalanced(/* str */) {
   throw new Error('Not implemented');
+  // return str.match(/\(\)|\[|\]|\{|\}/g) === null;
   // return str.match(/\(\)|\[|\]|\{|\}/g).length % 2 === 0;
 }
 
@@ -381,6 +395,13 @@ function toNaryString(num, n) {
  */
 function getCommonDirectoryPath(/* pathes */) {
   throw new Error('Not implemented');
+  // let path = '/';
+  // for (let i = 0; i < pathes.length; i += 1) {
+  //   if (pathes[i].indexOf(path) === 0) {
+  //     path = pathes[i];
+  //   }
+  // }
+  // return path;
   // let path = '';
   // for (let i = 0; i < pathes.length; i += 1) {
   //   if (pathes[i].indexOf(path) === 0) {
@@ -408,8 +429,11 @@ function getCommonDirectoryPath(/* pathes */) {
  *                         [ 6 ]]
  *
  */
-function getMatrixProduct(/* m1, m2 */) {
-  throw new Error('Not implemented');
+function getMatrixProduct(m1, m2) {
+  // throw new Error('Not implemented');
+  // eslint-disable-next-line max-len
+  return m1.map((row) => m2[0].map((col, i) => row.reduce((sum, cur, j) => sum + cur * m2[j][i], 0)));
+
   // const result = [];
   // for (let i = 0; i < m1.length; i += 1) {
   //   result[i] = [];
