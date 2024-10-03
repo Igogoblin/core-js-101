@@ -138,8 +138,14 @@ function isTriangle(a, b, c) {
  *   { top:20, left:20, width: 20, height: 20 }    =>  false
  *
  */
-function doRectanglesOverlap(/* rect1, rect2 */) {
-  throw new Error('Not implemented');
+function doRectanglesOverlap(rect1, rect2) {
+  // throw new Error('Not implemented');
+  return !(
+    rect1.left + rect1.width < rect2.left ||
+    rect1.top + rect1.height < rect2.top ||
+    rect1.left > rect2.left + rect2.width ||
+    rect1.top > rect2.top + rect2.height
+  );
   // return !(
   //   rect1.left > rect2.right ||
   //   rect1.right < rect2.left ||
@@ -479,6 +485,16 @@ function getMatrixProduct(m1, m2) {
  */
 function evaluateTicTacToePosition(/* position */) {
   throw new Error('Not implemented');
+  // const x = position.filter((x) => x === 'X').length;
+  // const o = position.filter((x) => x === 'O').length;
+  // if (x === o) {
+  //   return undefined;
+  // }
+  // if (x > o) {
+  //   return 'X';
+  // }
+  // return '0';
+
   // const x = position.filter((x) => x === 'X').length;
   // const o = position.filter((x) => x === 'O').length;
   // if (x === o) {
