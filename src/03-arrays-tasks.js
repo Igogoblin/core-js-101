@@ -348,7 +348,7 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
+function sortDigitNamesByNumericOrder(arr) {
   // 'nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two', 'one', 'zero'
   // const check = {
   //   0: 'zero',
@@ -362,7 +362,21 @@ function sortDigitNamesByNumericOrder(/* arr */) {
   //   8: 'eight',
   //   9: 'nine',
   // };
-  throw new Error('Not implemented');
+  const check = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ];
+  // eslint-disable-next-line no-param-reassign, no-return-assign
+  return (arr = arr.sort((a, b) => check.indexOf(a) - check.indexOf(b)));
+  // throw new Error('Not implemented');
   // return arr.sort((a, b) => check[a] - check[b]);
   // eslint-disable-next-line consistent-return
   // return arr.sort((a, b) => {
